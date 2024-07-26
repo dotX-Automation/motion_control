@@ -188,3 +188,11 @@ params:
     constraints: ""
     read_only: true
     var_name: tf_use_odom_link_as_main_
+
+  two_d_mode:
+    type: bool
+    default_value: false
+    description: "Enable 2D mode. Disable control along z axis."
+    constraints: "Cannot be changed."
+    read_only: true
+    var_name: two_d_mode_

@@ -18,3 +18,4 @@ position_controller:
     tf_global_link_: map
     tf_odom_link_: odom
     tf_use_odom_link_as_main: false
+    two_d_mode: false

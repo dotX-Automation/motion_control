@@ -160,7 +160,7 @@ void PositionControllerNode::reach(const ReachGoalHandleSharedPtr goal_handle)
     Vector2d diff2d(diff4d.x(), diff4d.y());
 
     bool arrived = diff2d.norm() <= lin_precision &&
-                   abs(diff4d.z()) <= alt_precision &&
+                   (two_d_mode_ || (abs(diff4d.z()) <= alt_precision)) &&
                    abs(diff4d.w()) <= ang_precision;
 
     if (arrived) {
@@ -206,7 +206,7 @@ void PositionControllerNode::reach(const ReachGoalHandleSharedPtr goal_handle)
         Vector3d(
           vel_h * std::cos(angle),
           vel_h * std::sin(angle),
-          vel_v),
+          two_d_mode_ ? 0.0 : vel_v),
         Vector3d(
           0.0,
           0.0,
@@ -233,7 +233,7 @@ void PositionControllerNode::reach(const ReachGoalHandleSharedPtr goal_handle)
     pose.pose.orientation.set__z(uxv_attidute.z());
 
     feedback->set__current_pose(pose);
-    feedback->set__distance_from_target(diff2d.norm());
+    feedback->set__distance_from_target(two_d_mode_ ? diff2d.norm() : diff3d.norm());
     goal_handle->publish_feedback(feedback);
 
     std::this_thread::sleep_for(ms(ctrl_sampling_time_ms_));
@@ -397,7 +397,7 @@ void PositionControllerNode::turn(const TurnGoalHandleSharedPtr goal_handle)
     Vector2d diff2d(diff4d.x(), diff4d.y());
 
     bool arrived = diff2d.norm() <= lin_precision &&
-                   abs(diff4d.z()) <= alt_precision &&
+                   (two_d_mode_ || (abs(diff4d.z()) <= alt_precision)) &&
                    abs(diff4d.w()) <= ang_precision;
 
     if (arrived) {
@@ -443,7 +443,7 @@ void PositionControllerNode::turn(const TurnGoalHandleSharedPtr goal_handle)
         Vector3d(
           vel_h * std::cos(angle),
           vel_h * std::sin(angle),
-          vel_v),
+          two_d_mode_ ? 0.0 : vel_v),
         Vector3d(
           0.0,
           0.0,

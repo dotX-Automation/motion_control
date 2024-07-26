@@ -145,6 +145,7 @@ private:
   std::string tf_global_link_ = "";
   std::string tf_odom_link_ = "";
   bool tf_use_odom_link_as_main_ = false;
+  bool two_d_mode_ = false;
 
   /* Node initialization routines. */
   void init_cgroups();
