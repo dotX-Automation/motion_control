@@ -1,0 +1,20 @@
+position_controller:
+  ros__parameters:
+    ctrl_angular_err_gain: 2.0
+    ctrl_angular_precision: 0.017453
+    ctrl_angular_vel_min: 0.1
+    ctrl_angular_vel_max: 1.0
+    ctrl_linearh_err_gain: 1.0
+    ctrl_linearh_precision: 0.05
+    ctrl_linearh_vel_min: 0.05
+    ctrl_linearh_vel_max: 0.60
+    ctrl_linearv_err_gain: 1.0
+    ctrl_linearv_precision: 0.05
+    ctrl_linearv_vel_min: 0.05
+    ctrl_linearv_vel_max: 0.30
+    ctrl_rt_counter_coeff: 0.5
+    ctrl_sampling_time_ms: 10
+    tf_base_link_: base_link
+    tf_global_link_: map
+    tf_odom_link_: odom
+    tf_use_odom_link_as_main: false

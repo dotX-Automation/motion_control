@@ -1,0 +1,190 @@
+header_include_path: position_controller/position_controller.hpp
+namespace: position_controller
+node_class_name: PositionControllerNode
+
+params:
+  ctrl_angular_err_gain:
+    type: double
+    default_value: 0.0
+    min_value: 0.0
+    max_value: 5.0
+    step: 0.0
+    description: "Attitude tracking gain coefficient."
+    constraints: "Must not be zero, six digits."
+    read_only: true
+    var_name: ctrl_angular_err_gain_
+
+  ctrl_angular_pos_precision:
+    type: double
+    default_value: 0.0
+    min_value: 0.0
+    max_value: 5.0
+    step: 0.0
+    description: "Attitude tracking precision."
+    constraints: "Must not be zero, six digits."
+    read_only: true
+    var_name: ctrl_angular_precision_
+
+  ctrl_angular_vel_min:
+    type: double
+    default_value: 0.0
+    min_value: 0.0
+    max_value: 5.0
+    step: 0.0
+    description: "Angular velocity minimum output."
+    constraints: "Must not be zero, six digits."
+    read_only: true
+    var_name: ctrl_angular_vel_min_
+
+  ctrl_angular_vel_max:
+    type: double
+    default_value: 0.0
+    min_value: 0.0
+    max_value: 5.0
+    step: 0.0
+    description: "Angular velocity maximum output."
+    constraints: "Must not be zero, six digits."
+    read_only: true
+    var_name: ctrl_angular_vel_max_
+
+  ctrl_linearh_err_gain:
+    type: double
+    default_value: 0.0
+    min_value: 0.0
+    max_value: 5.0
+    step: 0.0
+    description: "Horizontal position tracking gain coefficient."
+    constraints: "Must not be zero, six digits."
+    read_only: true
+    var_name: ctrl_linearh_err_gain_
+
+  ctrl_linearh_precision:
+    type: double
+    default_value: 0.0
+    min_value: 0.0
+    max_value: 5.0
+    step: 0.0
+    description: "Horizontal position tracking precision."
+    constraints: "Must not be zero, six digits."
+    read_only: true
+    var_name: ctrl_linearh_precision_
+
+  ctrl_linearh_vel_min:
+    type: double
+    default_value: 0.0
+    min_value: 0.0
+    max_value: 5.0
+    step: 0.0
+    description: "Horizontal velocity minimum output."
+    constraints: "Must not be zero, six digits."
+    read_only: true
+    var_name: ctrl_linearh_vel_min_
+
+  ctrl_linearh_vel_max:
+    type: double
+    default_value: 0.0
+    min_value: 0.0
+    max_value: 5.0
+    step: 0.0
+    description: "Horizontal velocity maximum output."
+    constraints: "Must not be zero, six digits."
+    read_only: true
+    var_name: ctrl_linearh_vel_max_
+
+  ctrl_linearv_err_gain:
+    type: double
+    default_value: 0.0
+    min_value: 0.0
+    max_value: 5.0
+    step: 0.0
+    description: "Vertical position tracking gain coefficient."
+    constraints: "Must not be zero, six digits."
+    read_only: true
+    var_name: ctrl_linearv_err_gain_
+
+  ctrl_linearv_precision:
+    type: double
+    default_value: 0.0
+    min_value: 0.0
+    max_value: 5.0
+    step: 0.0
+    description: "Vertical position tracking precision."
+    constraints: "Must not be zero, six digits."
+    read_only: true
+    var_name: ctrl_linearv_precision_
+
+  ctrl_linearv_vel_min:
+    type: double
+    default_value: 0.0
+    min_value: 0.0
+    max_value: 5.0
+    step: 0.0
+    description: "Vertical velocity minimum output."
+    constraints: "Must not be zero, six digits."
+    read_only: true
+    var_name: ctrl_linearv_vel_min_
+
+  ctrl_linearv_vel_max:
+    type: double
+    default_value: 0.0
+    min_value: 0.0
+    max_value: 5.0
+    step: 0.0
+    description: "Vertical velocity maximum output."
+    constraints: "Must not be zero, six digits."
+    read_only: true
+    var_name: ctrl_linearv_vel_max_
+
+  ctrl_rt_counter_coeff:
+    type: double
+    default_value: 0.0
+    min_value: 0.0
+    max_value: 5.0
+    step: 0.0
+    description: "Coefficient to counter roto-translation."
+    constraints: "Six digits."
+    read_only: false
+    var_name: ctrl_rt_counter_coeff_
+
+  ctrl_sampling_time_ms:
+    type: integer
+    default_value: 10
+    min_value: 1
+    max_value: 5000
+    step: 1
+    description: "Control sampling time [ms]."
+    constraints: "Must be positive."
+    read_only: false
+    var_name: ctrl_sampling_time_ms_
+
+  tf_base_link_:
+    type: string
+    default_value: base_link
+    description: "Agent link name."
+    constraints: "Cannot be changed"
+    read_only: true
+    var_name: tf_base_link_
+
+  tf_global_link:
+    type: string
+    default_value: map
+    description: "World link name."
+    constraints: "Cannot be changed"
+    read_only: true
+    var_name: tf_global_link_
+
+  tf_odom_link:
+    type: string
+    default_value: odom
+    description: "Odometry link name."
+    constraints: "Cannot be changed"
+    read_only: true
+    var_name: tf_odom_link_
+
+  tf_use_odom_link_as_main:
+    type: bool
+    default_value: true
+    description: "Use odometry link as internal main link."
+    constraints: ""
+    read_only: true
+    var_name: tf_use_odom_link_as_main_
