@@ -50,3 +50,50 @@ function utils-update {
   source "install/local_setup.$CURR_SHELL"
   popd || return
 }
+
+# Moves the robot to a target position
+function reach {
+  # Check input arguments
+  if [[ $# -ne 5 ]]; then
+    echo >&2 "Usage:"
+    echo >&2 "    reach X Y YAW RADIUS"
+    echo >&2 "XY must be w.r.t. a NWU reference frame, YAW must be in [-180° +180°], RADIUS is absolute."
+    return 1
+  fi
+
+  local yaw_rad
+  yaw_rad="$(degrad "$3")"
+
+  ros2 action send_goal -f \
+    "$NAMESPACE"/position_controller/reach \
+    dua_interfaces/action/Reach \
+      "{ \
+        target_pose: { \
+          header: {frame_id: map}, \
+          pose: { \
+            position: {x: $1, y: $2}, \
+            orientation: { \
+              w: $(python3 -c "import math; print(math.cos($yaw_rad/2.0))"), \
+              x: 0.0, \
+              y: 0.0, \
+              z: $(python3 -c "import math; print(math.sin($yaw_rad/2.0))") \
+            } \
+          } \
+       },
+       reach_radius: $4, \
+       stop_at_target: true \
+      }"
+}
+
+# Performs a turn to the desired heading
+function turn {
+  # Check input arguments
+  if [[ $# -ne 1 ]]; then
+    echo >&2 "Usage:"
+    echo >&2 "    turn YAW"
+    echo >&2 "YAW must be in [-180° +180°]."
+    return 1
+  fi
+
+  ros2 action send_goal -f "$NAMESPACE"/position_controller/turn dua_interfaces/action/Turn "{header: {frame_id: map}, heading: $(degrad "$1")}"
+}
