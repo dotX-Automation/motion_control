@@ -78,7 +78,7 @@ ament_target_dependencies(position_controller
   tf2
   tf2_eigen
   tf2_ros)
-rclcpp_components_register_nodes(position_controller "DriveControl::DriveControlNode")
+rclcpp_components_register_nodes(position_controller "position_controller::PositionControllerNode")
 
 # Drive Control standalone application
 add_executable(position_controller_app
