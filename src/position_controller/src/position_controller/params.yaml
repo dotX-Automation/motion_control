@@ -157,7 +157,7 @@ params:
     read_only: false
     var_name: ctrl_sampling_time_ms_
 
-  tf_base_link_:
+  tf_base_link:
     type: string
     default_value: base_link
     description: "Agent link name."
