@@ -28,6 +28,6 @@ namespace position_controller
 {
   
   /* Publishers Topics */
-  const std::string PositionControllerNode::cmd_vel_pub_topic_ = "~/cmd_vel";
+  const std::string PositionControllerNode::cmd_vel_pub_topic_ = "/cmd_vel";
 
 } // namespace position_controller
