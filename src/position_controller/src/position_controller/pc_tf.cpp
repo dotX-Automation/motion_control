@@ -44,10 +44,10 @@ bool PositionControllerNode::tf_get_map_to_odom(rclcpp::Time time, rclcpp::Durat
       timeout);
   } catch (const tf2::TransformException & e) {
     if(time.nanoseconds() > 0) {
-      RCLCPP_INFO(this->get_logger(), "TF map->odom retry without time");
+      RCLCPP_INFO(this->get_logger(), "TF global->odom retry without time");
       return tf_get_map_to_odom(rclcpp::Time(), rclcpp::Duration(0,0), transform);
     } else {
-      RCLCPP_WARN(this->get_logger(), "TF map->odom exception: %s", e.what());
+      RCLCPP_WARN(this->get_logger(), "TF global->odom exception: %s", e.what());
       return false;
     }
   }
