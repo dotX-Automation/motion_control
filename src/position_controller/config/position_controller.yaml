@@ -14,8 +14,8 @@ position_controller:
     ctrl_linearv_vel_max: 0.30
     ctrl_rt_counter_coeff: 0.5
     ctrl_sampling_time_ms: 10
-    tf_base_link_: base_link
-    tf_global_link_: map
-    tf_odom_link_: odom
+    tf_base_link: base_link
+    tf_global_link: map
+    tf_odom_link: odom
     tf_use_odom_link_as_main: false
     two_d_mode: false
