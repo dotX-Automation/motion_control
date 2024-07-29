@@ -159,13 +159,13 @@ void PositionControllerNode::reach(const ReachGoalHandleSharedPtr goal_handle)
     Vector3d diff3d(diff4d.x(), diff4d.y(), diff4d.z());
     Vector2d diff2d(diff4d.x(), diff4d.y());
 
-    bool arrived = diff2d.norm() <= lin_precision &&
-                   (two_d_mode_ || (abs(diff4d.z()) <= alt_precision)) &&
-                   abs(diff4d.w()) <= ang_precision;
+    bool arrived = (diff2d.norm() <= lin_precision) &&
+                   ((two_d_mode_ || (abs(diff4d.z()) <= alt_precision))) &&
+                   (abs(diff4d.w()) <= ang_precision);
 
     if (arrived) {
       RCLCPP_WARN(this->get_logger(), "Reach completed");
-      if(stabilize) {
+      if (stabilize) {
         stop_rover();
       }
       actions_lock_.unlock();
@@ -396,13 +396,13 @@ void PositionControllerNode::turn(const TurnGoalHandleSharedPtr goal_handle)
     Vector3d diff3d(diff4d.x(), diff4d.y(), diff4d.z());
     Vector2d diff2d(diff4d.x(), diff4d.y());
 
-    bool arrived = diff2d.norm() <= lin_precision &&
-                   (two_d_mode_ || (abs(diff4d.z()) <= alt_precision)) &&
-                   abs(diff4d.w()) <= ang_precision;
+    bool arrived = (diff2d.norm() <= lin_precision) &&
+                   ((two_d_mode_ || (abs(diff4d.z()) <= alt_precision))) &&
+                   (abs(diff4d.w()) <= ang_precision);
 
     if (arrived) {
-      RCLCPP_WARN(this->get_logger(), "Turn completed");
-      if(stabilize) {
+      RCLCPP_WARN(this->get_logger(), "Reach completed");
+      if (stabilize) {
         stop_rover();
       }
       actions_lock_.unlock();
