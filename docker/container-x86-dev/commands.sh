@@ -54,7 +54,7 @@ function utils-update {
 # Moves the robot to a target position
 function reach {
   # Check input arguments
-  if [[ $# -ne 5 ]]; then
+  if [[ $# -ne 4 ]]; then
     echo >&2 "Usage:"
     echo >&2 "    reach X Y YAW RADIUS"
     echo >&2 "XY must be w.r.t. a NWU reference frame, YAW must be in [-180° +180°], RADIUS is absolute."
