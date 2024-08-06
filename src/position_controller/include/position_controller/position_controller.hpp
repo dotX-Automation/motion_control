@@ -48,9 +48,6 @@
 #include <dua_interfaces/action/turn.hpp>
 
 #include <dua_interfaces/msg/command_result_stamped.hpp>
-#include <dua_interfaces/msg/position_setpoint.hpp>
-#include <dua_interfaces/msg/rates_setpoint.hpp>
-#include <dua_interfaces/msg/velocity_setpoint.hpp>
 
 #include <Eigen/Core>
 #include <Eigen/Dense>
