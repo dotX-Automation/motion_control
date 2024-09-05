@@ -11,7 +11,7 @@ params:
     step: 0.0
     description: "Attitude tracking gain coefficient."
     constraints: "Must not be zero, six digits."
-    read_only: true
+    read_only: false
     var_name: ctrl_angular_err_gain_
 
   ctrl_angular_precision:
@@ -22,7 +22,7 @@ params:
     step: 0.0
     description: "Attitude tracking precision."
     constraints: "Must not be zero, six digits."
-    read_only: true
+    read_only: false
     var_name: ctrl_angular_precision_
 
   ctrl_angular_vel_min:
@@ -33,7 +33,7 @@ params:
     step: 0.0
     description: "Angular velocity minimum output."
     constraints: "Must not be zero, six digits."
-    read_only: true
+    read_only: false
     var_name: ctrl_angular_vel_min_
 
   ctrl_angular_vel_max:
@@ -44,7 +44,7 @@ params:
     step: 0.0
     description: "Angular velocity maximum output."
     constraints: "Must not be zero, six digits."
-    read_only: true
+    read_only: false
     var_name: ctrl_angular_vel_max_
 
   ctrl_linearh_err_gain:
@@ -55,7 +55,7 @@ params:
     step: 0.0
     description: "Horizontal position tracking gain coefficient."
     constraints: "Must not be zero, six digits."
-    read_only: true
+    read_only: false
     var_name: ctrl_linearh_err_gain_
 
   ctrl_linearh_precision:
@@ -66,7 +66,7 @@ params:
     step: 0.0
     description: "Horizontal position tracking precision."
     constraints: "Must not be zero, six digits."
-    read_only: true
+    read_only: false
     var_name: ctrl_linearh_precision_
 
   ctrl_linearh_vel_min:
@@ -77,7 +77,7 @@ params:
     step: 0.0
     description: "Horizontal velocity minimum output."
     constraints: "Must not be zero, six digits."
-    read_only: true
+    read_only: false
     var_name: ctrl_linearh_vel_min_
 
   ctrl_linearh_vel_max:
@@ -88,7 +88,7 @@ params:
     step: 0.0
     description: "Horizontal velocity maximum output."
     constraints: "Must not be zero, six digits."
-    read_only: true
+    read_only: false
     var_name: ctrl_linearh_vel_max_
 
   ctrl_linearv_err_gain:
@@ -99,7 +99,7 @@ params:
     step: 0.0
     description: "Vertical position tracking gain coefficient."
     constraints: "Must not be zero, six digits."
-    read_only: true
+    read_only: false
     var_name: ctrl_linearv_err_gain_
 
   ctrl_linearv_precision:
@@ -110,7 +110,7 @@ params:
     step: 0.0
     description: "Vertical position tracking precision."
     constraints: "Must not be zero, six digits."
-    read_only: true
+    read_only: false
     var_name: ctrl_linearv_precision_
 
   ctrl_linearv_vel_min:
@@ -121,7 +121,7 @@ params:
     step: 0.0
     description: "Vertical velocity minimum output."
     constraints: "Must not be zero, six digits."
-    read_only: true
+    read_only: false
     var_name: ctrl_linearv_vel_min_
 
   ctrl_linearv_vel_max:
@@ -132,7 +132,7 @@ params:
     step: 0.0
     description: "Vertical velocity maximum output."
     constraints: "Must not be zero, six digits."
-    read_only: true
+    read_only: false
     var_name: ctrl_linearv_vel_max_
 
   ctrl_rt_counter_coeff:
